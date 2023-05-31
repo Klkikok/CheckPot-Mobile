@@ -152,6 +152,10 @@ class CheckPotViewController: FlutterViewController,  CBCentralManagerDelegate, 
                 print("Pretplatio se")
                 peripheral.setNotifyValue(true, for: characteristic)
             }
+            if(characteristic.uuid == CBUUID(string: "19B10001-E8F2-537E-4F6C-D104768A1300"))
+            {
+                peripheral.setNotifyValue(true, for: characteristic)
+            }
           //MARK:- Light Value
             
         }
@@ -238,6 +242,24 @@ class CheckPotViewController: FlutterViewController,  CBCentralManagerDelegate, 
                 do
                 {
                     try sendEvent(event: [3,  light])
+                    
+                } catch
+                {
+                    print("Error")
+                }
+                
+            }
+            
+        }
+        else if(characteristic.uuid == CBUUID(string: "19B10001-E8F2-537E-4F6C-D104768A1300"))
+        {
+            if let danger = UInt8(value.hexEncodedString(), radix: 16) {
+                print("Danger: ")
+                print(danger)
+                print("")
+                do
+                {
+                    try sendEvent(event: [4,  danger])
                     
                 } catch
                 {
