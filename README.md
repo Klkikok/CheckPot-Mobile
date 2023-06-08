@@ -1,9 +1,12 @@
-# checkpot
+# CheckPot
 
-A new Flutter project.
+Application for a project for IoT
 
-## Getting Started
+## Info
 
+The application is used for reading the information of your CheckPot device. From the app you can see the temperature, air humidity, soil moisture and light that your plant absorbs. It communicates with the Seeed nRF52840 module over BLE, by subscribing to respected characteristics, and receives the data and presents it on the screen for the user.
+
+## Flutter project
 This project is a starting point for a Flutter application.
 
 A few resources to get you started if this is your first Flutter project:
